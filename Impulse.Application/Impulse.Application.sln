@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Impulse.Application", "Impulse.Application\Impulse.Application.csproj", "{9F959A9F-7D91-49A7-A278-B7C8E3F3A8AD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dashboard.Runner", "Dashboard.Runner\Dashboard.Runner.csproj", "{6AED14C7-2210-479F-9133-88DC6E3AE25B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9F959A9F-7D91-49A7-A278-B7C8E3F3A8AD} = {9F959A9F-7D91-49A7-A278-B7C8E3F3A8AD}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
