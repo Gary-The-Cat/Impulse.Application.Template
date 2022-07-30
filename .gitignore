@@ -41,3 +41,4 @@ obj/
 Debug/
 *.pdb
 Artifacts/
+/Impulse.Application/Impulse.Installer/GeneratedComponents.wxs
