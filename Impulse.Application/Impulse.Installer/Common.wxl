@@ -9,10 +9,18 @@
 	
 	<String Id="Language">1033</String>
 	
-	<String Id="Description">An application for all Tutorials With Gary products.</String>
-	<String Id="Comment">Please use responsibly.</String>
+	<!-- Installer UI Constants -->
+	<String Id="Description">A base Impulse Dashboard application template.</String>
+	<String Id="Comment">Use responsibly.</String>
 	<String Id="Keywords">Dashboard,Impulse,Tutorials,Gary,Application</String>
-	
 	<String Id="DowngradeMessage">A newer version of Impulse Application is already installed.</String>
+	
+	<!-- Published project source, this should be the pulish folder of your assembly that has an IApplcation or IPlugin implementation. -->
+	<String Id="FileSource">$(var.Impulse.Application.TargetDir)\win-x64\publish\</String>
+
+	<!-- The following Guids must be replaced with your own uniquie GUIDs. -->
+	<String Id="RegistryId">{27B84E3E-6055-443F-B39C-6F4A4A829ABB}</String>
+	<String Id="UpgradeCode">{1DC14FE8-98ED-4BB1-8E00-76F0F20FBC11}</String>
+	<String Id="ProductId">{FFD0AA64-ED35-4E03-994D-B679DC8CEDC2}</String>
 	
 </WixLocalization>

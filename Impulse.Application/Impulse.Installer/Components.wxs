@@ -1,34 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- FILE DOES NOT REQUIRE MODIFICATION -->
+
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 	<Fragment>
 		<ComponentGroup Id="ProductComponents">
-			<!-- Shortcut -->
+			<!-- Register which components the ProductComponents consist of. -->
 			<ComponentRef Id="ApplicationRegistryEntry" />
 		</ComponentGroup>
 
-		<DirectoryRef Id="INSTALLFOLDER" FileSource="$(var.Impulse.Application.ProjectDir)\bin\Debug\net6.0-windows\win-x64\publish\">
-			<Component Id="ApplicationRegistryEntry" Guid="{27B84E3E-6055-443F-B39C-6F4A4A829ABB}">
-				<!--<Shortcut
-					Id="ApplicationRegistryEntry"
-					Name="!(loc.ProductName)"
-					Target="[INSTALLFOLDER]Impulse.Dashboard.exe"
-					Directory="InstallProgramMenuFolder"
-					WorkingDirectory="INSTALLFOLDER"
-					Icon="icon.ico"/>-->
+		<DirectoryRef Id="INSTALLFOLDER" FileSource="!(loc.FileSource)">
+			<Component Id="ApplicationRegistryEntry" Guid="!(loc.RegistryId)">
 
+				<!-- Registry entry required for Impulse.Dashboard to identify the application. -->
+				<!-- DO NOT CHANGE -->
 				<RegistryValue
 					Id="RegShortcutKey"
 					Root="HKCU"
 					Type="string"
 					Value="[INSTALLFOLDER]"
-					Key="SOFTWARE\!(loc.CompanyName)\!(loc.ApplicationsFolder)"
+					Key="SOFTWARE\Tutorials With Gary\Applications"
 					KeyPath="yes"
-					Name="!(loc.ProductName)"/>
-				
-				
+					Name="!(loc.ProductName)"/>				
 
-				 <!--Remove start menu shortcut-->
-				<RemoveFolder Id="RemoveStartMenu" Directory="InstallProgramMenuFolder" On="uninstall"/>
 			</Component>
 		</DirectoryRef>
 		

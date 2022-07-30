@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- FILE DOES NOT REQUIRE MODIFICATION -->
+
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 	
-	<?define UpgradeCode = {1DC14FE8-98ED-4BB1-8E00-76F0F20FBC11} ?>
+	<?define UpgradeCode = !(loc.UpgradeCode) ?>
+	<?define IconLocation = $(var.Impulse.Application.ProjectDir)Default.Application.ico ?>
 	
 	<Product
-		Id="{FFD0AA64-ED35-4E03-994D-B679DC8CEDC2}"
+		Id="!(loc.ProductId)"
 		Name="!(loc.ProductName_x64)"
 		Language="!(loc.Language)"
 		Version="$(var.BuildVersion)"
@@ -26,7 +29,7 @@
 		<!-- Cab file is a zip with the installers contents, not embedding it will produce an msi + cab file. -->
 		<MediaTemplate EmbedCab="yes"/>
 
-		<Icon Id="icon.ico" SourceFile="$(var.Impulse.Application.ProjectDir)\Default.Application.ico"/>
+		<Icon Id="icon.ico" SourceFile="$(var.IconLocation)"/>
 
 		<!-- Set the icon for our product to be the icon we created above. -->
 		<Property Id="ARPPRODUCTICON">icon.ico</Property>
@@ -38,7 +41,7 @@
 		<WixVariable Id="WixUIDialogBmp" Value="$(var.ProjectDir)\Assets\Background.bmp"/>
 		<WixVariable Id="WixUIBannerBmp" Value="$(var.ProjectDir)\Assets\Banner.bmp"/>
 		
-		<Feature Id="ProductFeature" Title="ImpulseDashboard" Level="1">
+		<Feature Id="ProductFeature" Title="ImpulseApplication" Level="1">
 			<ComponentGroupRef Id="ProductComponents"/>			
 			<ComponentGroupRef Id="PublishedComponents"/>			
 		</Feature>
